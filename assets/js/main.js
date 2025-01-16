@@ -1,4 +1,3 @@
-// Example starter JavaScript for disabling form submissions if there are invalid fields
 (() => {
   "use strict";
 
@@ -20,7 +19,7 @@
     document.getElementById("my-form").reset();
     Swal.fire({
       title: "تحتاج",
-      text: amount + " kg",
+      text: (Math.round(amount * 100) / 100).toFixed(2) + " kg",
       icon: "success",
     });
   };
