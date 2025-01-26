@@ -13,14 +13,19 @@
 
   const btn = document.getElementById("mybutton");
   btn.onclick = function () {
-    let stn = document.getElementById("stn").value;
-    let area = document.getElementById("area").value;
-    const amount = ((120.0 - stn) * area) / 0.3;
-    document.getElementById("my-form").reset();
+    // المدخلات
+    var nitrogen = document.getElementById("nitrogen").value;
+    var area = document.getElementById("area").value;
+
+    // المعالجة
+    var amount = ((120.0 - nitrogen) * area) / 0.3;
+
+    // المخرجات
     Swal.fire({
       title: "تحتاج",
       text: (Math.round(amount * 100) / 100).toFixed(2) + " kg",
       icon: "success",
     });
+    document.getElementById("my-form").reset();
   };
 })();
